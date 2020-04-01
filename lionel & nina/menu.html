@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+
+    nav{
+    	width: 100vw;
+    	background: grey;
+    	display: flex;
+    	justify-content: space-around;
+    	align-items: center;
+    }
+
+	#menu-deroulant, #menu-deroulant ul {
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
+	}
+	#menu-deroulant {
+	/* on centre le menu dans la page */
+	    text-align: center;
+	}
+	#menu-deroulant li {
+	/* on place les liens du menu horizontalement */
+	    display: inline-block;
+	}
+	#menu-deroulant ul li {
+	/* on enlève ce comportement pour les liens du sous menu */
+	    display: inherit;
+
+	}
+	#menu-deroulant a {
+		margin-left: 30px;
+	    text-decoration: none;
+	    display: block;
+		color:#000;
+	}
+	#menu-deroulant ul {
+	    position: absolute;
+	/* on cache les sous menus complètement sur la gauche */
+	    left: -999em;
+	    text-align: left;
+	    z-index: 1000;
+	}
+	#menu-deroulant li:hover ul {
+	/* Au survol des li du menu on replace les sous menus */
+	    left: auto;
+	}
+    </style>
+
+    <title></title>
+  </head>
+  <body>
+	<nav>
+		<ul id="menu-deroulant">
+				<li><a class="active" href="#">Home</a></li>
+					<li><a href="presentation.html">Qui nous sommes</a></li>
+			<li><a href="#">Nos Valeurs</a>
+				<ul>
+					<li><a href="activites.php">Activites</a></li>
+					<li><a href="#">A</a></li>
+					<li><a href="#">B</a></li>
+				</ul>
+			</li>
+		    <li><a href="ressources.html">Ressources</a>
+				<ul>
+					<li><a href="#">Nos Ressources</a></li>
+					<li><a href="#">Certifications</a></li>
+					<li><a href="#">Partenaires</a></li>
+					<li><a href="#">Telephone</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	
+  </body>
+</html>

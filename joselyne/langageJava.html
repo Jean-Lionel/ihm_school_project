@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Informatique</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <table width=1200 align="center" height=600 style="border: 2px solid #abc;">
+        <tr style="background: rgb(255, 0, 132)">
+            <td width=150> <img src="img/site-web-full-micro-1.jpg" width="150" alt="" srcset=""></td>
+            <td colspan="2" width=430>
+                <h1 style="text-align: center;" class="titre_principal"> Le Monde Informatique</h1>
+                <nav>
+                    <ul id="menu">
+                        <li><a class="active" href="index.html">Acceuil</a></li>
+
+                        <li><a href="service.html">SERVICES</a>
+                            <ul>
+
+                                <li><a href="reparation.html">REPARATION DES MATERIELLES INFORMATIQUE</a></li>
+                                <li><a href="formation.html">FORMATION</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="apropos.html">A PROPOS</a></li>
+                    </ul>
+                </nav>
+
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td colspan="2" width=540 valign="top">
+                <ul class="menu-gauche">
+                    <li><a href="adobe.html">ADOBE PHOTOSHOPE</a></li>
+                    <li><a href="adobePremierer.html">Adobe Premiere pro</a></li>
+                    <li><a href="after.html">Adobe After effect</a></li>
+                    <li><a href="reader.html">Adobe reader</a></li>
+                    <hr>
+                    <li>Microsoft
+                        <ul>
+                            <li><a href="word.html">Word</a></li>
+                            <li><a href="excel.html">Excel</a></li>
+                            <li><a href="publisher.html">Publisher</a></li>
+                            <li><a href="power.html">Power Point</a></li>
+                            <li><a href="acces.html">Acces</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        LANGAGE DE PROGRAMMATION
+                        <hr>
+                        <ul>
+                            <li><a href="langagec.html">LANGAGE C</a></li>
+                            <li><a href="langageCplus.html">LANGAGE C++</a></li>
+                            <li><a href="langageJava.html">LANGAGE JAVA</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </td>
+            <td rowspan="2">
+                <h2 style="text-align: center;">Le Langage Java</h2>
+
+                <p style="text-align: center;"><img src="img/197px-Java_Logo.svg.png" width="300" alt="" srcset="">
+                </p>
+                <p style="text-align: justify; padding: 40px;">
+
+                    Java est un langage de programmation orienté objet créé par James Gosling et Patrick Naughton,
+                    employés de Sun Microsystems, avec le soutien de Bill Joy (cofondateur de Sun Microsystems en 1982),
+                    présenté officiellement le 23 mai 1995 au SunWorld.
+
+                    La société Sun a été ensuite rachetée en 2009 par la société Oracle qui détient et maintient
+                    désormais Java.
+
+                    Une particularité de Java est que les logiciels écrits dans ce langage sont compilés vers une
+                    représentation binaire intermédiaire qui peut être exécutée dans une machine virtuelle Java (JVM) en
+                    faisant abstraction du système d'exploitation.
+
+                    <h1>Exemple d'un code en java </h1>
+
+                    <pre style="background: black; color: blanchedalmond;">
+import java.util.Scanner;
+
+class Exemple {
+  public static void main(String[] args) {
+    //Notre objet Scanner
+    Scanner sc = new Scanner(System.in);
+
+    //initialisation des variables
+    double aConvertir, convertit=0;
+    char reponse=' ', mode = ' ';
+
+    System.out.println("CONVERTISSEUR DEGRÉS CELSIUS ET DEGRÉS FAHRENHEIT");
+    System.out.println("-------------------------------------------------");
+    
+    do{//tant que reponse = O //boucle principale
+       
+      do{//tant que reponse n'est pas O ou N
+        mode = ' ';
+        System.out.println("Choisissez le mode de conversion : ");
+        System.out.println("1 - Convertisseur Celsius - Fahrenheit");
+        System.out.println("2 - Convertisseur Fahrenheit - Celsius ");
+        mode = sc.nextLine().charAt(0);
+       
+        if(mode != '1' && mode != '2')
+          System.out.println("Mode inconnu, veuillez réitérer votre choix.");
+
+      }while (mode != '1' && mode != '2');
+       
+      //saisie de la température à convertir
+      System.out.println("Température à convertir :");
+      aConvertir = sc.nextDouble();
+      //Pensez à vider la ligne lue
+      sc.nextLine();
+     
+      //Selon le mode, on calcule différemment et on affiche le résultat
+      if(mode == '1'){
+        convertit = ((9.0/5.0) * aConvertir) + 32.0;
+        System.out.print(aConvertir + " °C correspond à : ");
+        System.out.println(arrondi(convertit, 2) + " °F.");
+      }
+      else{
+        convertit = ((aConvertir - 32) * 5) / 9;
+        System.out.print(aConvertir + " °F correspond à : ");
+        System.out.println(arrondi(convertit, 2) + " °C.");
+      }
+     
+      //On invite l'utilisateur à recommencer ou à quitter
+      do{       
+        System.out.println("Souhaitez-vous convertir une autre température ?(O/N)");
+        reponse = sc.nextLine().charAt(0);
+       
+      }while(reponse != 'O' && reponse != 'N');
+     
+    }while(reponse == 'O');
+    
+  System.out.println("Au revoir !");
+    
+  //Fin de programme
+  }
+    
+  public static double arrondi(double A, int B) {
+    return (double) ( (int) (A * Math.pow(10, B) + .5)) / Math.pow(10, B);
+  } 
+}
+                    </pre>
+
+
+                </p>
+
+                
+            </td>
+
+        </tr>
+
+        <tr>
+
+
+        </tr>
+
+        <tr>
+            <td colspan="3" style="background: grey">
+                <table align="center">
+                    <tr>
+                        <td>Disigned by </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Les menus deroulant</title>
+    <style>
+        .menu-deroulant ul li{
+            text-align: center;
+            list-style-type: none;
+        }
+        a{
+            text-align: center;
+            padding-left: 50px;
+        }
+        .menu-deroulant ul{
+            position: absolute;
+            left: -999em;
+            z-index: 999;
+        }
+
+        .menu-deroulant li:hover ul{
+            left: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="menu-deroulant">
+            <li> <a href="#">Hacker</a>
+
+                <ul>
+                    <li><a href="#">Lionel</a></li>
+                    <li><a href="#">Jean</a></li>
+                    <li><a href="#">Nininahazwe</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+</body>
+</html>
